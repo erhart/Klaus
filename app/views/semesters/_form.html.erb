@@ -11,13 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
-  </div>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
+    <%= f.select :name, Name.all.collect { |p| [ p.name, p.id ] } %>
   </div>
   <div class="actions">
     <%= f.submit %>
