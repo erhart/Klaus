@@ -1,4 +1,14 @@
 Klausur::Application.routes.draw do
+  resources :documents
+
+  resources :semesters
+
+  resources :doc_types
+
+  resources :lessons
+
+  resources :profs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

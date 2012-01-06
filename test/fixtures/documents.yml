@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  name: MyString
+  lesson: 
+  semester: 
+  prof: 
+  doc_type: 
+
+two:
+  id: 1
+  name: MyString
+  lesson: 
+  semester: 
+  prof: 
+  doc_type: 

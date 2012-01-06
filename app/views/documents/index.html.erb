@@ -1,0 +1,33 @@
+<h1>Listing documents</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Lesson</th>
+    <th>Semester</th>
+    <th>Prof</th>
+    <th>Doc type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @documents.each do |document| %>
+  <tr>
+    <td><%= document.id %></td>
+    <td><%= document.name %></td>
+    <td><%= document.lesson %></td>
+    <td><%= document.semester %></td>
+    <td><%= document.prof %></td>
+    <td><%= document.doc_type %></td>
+    <td><%= link_to 'Show', document %></td>
+    <td><%= link_to 'Edit', edit_document_path(document) %></td>
+    <td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Document', new_document_path %>
