@@ -17,10 +17,10 @@
   <tr>
     <td><%= document.id %></td>
     <td><%= document.name %></td>
-    <td><%= document.lesson %></td>
-    <td><%= document.semester %></td>
-    <td><%= document.prof %></td>
-    <td><%= document.doc_type %></td>
+    <td><%= document.lesson.name %></td>
+    <td><%= document.semester.name %></td>
+    <td><%= document.prof.name %></td>
+    <td><%= document.doc_type.name %></td>
     <td><%= link_to 'Show', document %></td>
     <td><%= link_to 'Edit', edit_document_path(document) %></td>
     <td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
