@@ -1,4 +1,6 @@
 class DocTypesController < ApplicationController
+before_filter :authenticate_user!
+
   # GET /doc_types
   # GET /doc_types.json
   def index

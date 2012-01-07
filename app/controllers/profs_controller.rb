@@ -1,4 +1,6 @@
 class ProfsController < ApplicationController
+before_filter :authenticate_user!
+
   # GET /profs
   # GET /profs.json
   def index

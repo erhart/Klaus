@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+before_filter :authenticate_user!, :only => [ :destroy ]
+
   # GET /documents
   # GET /documents.json
   def index
