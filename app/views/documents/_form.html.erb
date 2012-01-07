@@ -27,6 +27,13 @@
     <%= f.label :doc_type %><br />
     <%= f.select :doc_type_id, DocType.all.collect { |p| [ p.name, p.id ] } %>
   </div>
+  <div>
+    <%= f.file_field :file %>
+  </div>
+  <div>
+    <%= f.label :remote_file_url, "or file http://url" %><br />
+    <%= f.text_field :remote_file_url %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
