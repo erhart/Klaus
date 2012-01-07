@@ -1,12 +1,12 @@
 <h3>Listing documents</h3>
 
-<table>
+<table width="100%">
   <tr>
-    <th>Id</th>
-    <th>Name</th>
+    <!--<th>Id</th>
+    <th>Name</th>-->
+    <th>Prof</th>
     <th>Lesson</th>
     <th>Semester</th>
-    <th>Prof</th>
     <th>Doc type</th>
     <th></th>
     <th></th>
@@ -15,11 +15,11 @@
 
 <% @documents.each do |document| %>
 	  <tr class="<%= cycle("even", "odd") %>">
-		<td><%= document.id %></td>
-		<td><%= document.name %></td>
+		<!--<td><%= document.id %></td>
+		<td><%= document.name %></td>-->
+		<td><%= document.prof.name %></td>
 		<td><%= document.lesson.name %></td>
 		<td><%= document.semester.name %></td>
-		<td><%= document.prof.name %></td>
 		<td><%= document.doc_type.name %></td>
 		<td><%= link_to 'Show', document %></td>
 		<td><%= link_to 'Edit', edit_document_path(document) %></td>
@@ -30,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New Document', new_document_path %>
+<!--<%= link_to 'New Document', new_document_path %>-->

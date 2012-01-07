@@ -10,7 +10,11 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= f.label :prof %><br />
+    <%= f.select :prof_id, Prof.all.collect { |p| [ p.name, p.id ] } %>
+  </div>
   <div class="field">
     <%= f.label :lesson %><br />
 	<%= f.select :lesson_id, Lesson.all.collect { |p| [ p.name, p.id ] } %>
@@ -20,13 +24,9 @@
 	<%= f.select :semester_id, Semester.all.collect { |p| [ p.name, p.id ] } %>
   </div>
   <div class="field">
-    <%= f.label :prof %><br />
-    <%= f.select :prof_id, Prof.all.collect { |p| [ p.name, p.id ] } %>
-  </div>
-  <div class="field">
     <%= f.label :doc_type %><br />
     <%= f.select :doc_type_id, DocType.all.collect { |p| [ p.name, p.id ] } %>
-  </div>
+  </div><br/>
   <div class="actions">
     <%= f.submit %>
   </div>

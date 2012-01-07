@@ -17,13 +17,16 @@
 		</header>
 		
 		<nav>
+			<%= link_to 'Documents', documents_path %> ||
+			
 			<% unless user_signed_in? %>
 				<%= link_to "Login", new_user_session_path %>
 			<% else %> 
 				<%= link_to 'New document', new_document_path %> |
-				<%= link_to 'New lesson', new_lesson_path %> |
 				<%= link_to 'New professor', new_prof_path %> |
+				<%= link_to 'New lesson', new_lesson_path %> |
 				<%= link_to 'New semester', new_semester_path %> |
+				<%= link_to 'New doctype', new_doc_type_path %> ||
 				<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 			<% end %>
 		</nav>
@@ -34,5 +37,6 @@
 			
 		</footer>
 			<img class="logo" src="../assets/QR-FS-Logo_-_fsmni.thm.de.png" alt="FSMNI Logo" />
+			<div class="stats">Documents: <%= Document.where('id').size.to_s %></div>
 	</body>
 </html>

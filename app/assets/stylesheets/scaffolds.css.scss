@@ -2,7 +2,7 @@ body {
   background-color: white;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 1em;
   line-height: 18px;
   width: 900px;
   margin: 10px auto;
@@ -13,6 +13,7 @@ body {
 header{
 	height: 100px;
 	border-bottom: 1px solid grey;
+	margin-bottom: 10px;
 }
 
 nav{
@@ -27,7 +28,7 @@ footer{
 }
 
 h1{
-	font-size: 5em;
+	font-size: 4em;
 	font-weight: bold;
 	text-align: center;
 }
@@ -38,7 +39,7 @@ h2{
 }
 
 h3{
-	font-size: 1.5em;
+	font-size: 1.4em;
 	text-align: left;
 }
 
@@ -55,14 +56,24 @@ pre {
 a {
   color: #000;
   &:visited {
-    color: #666; }
+    color: #000; }
   &:hover {
     color: #fff;
     background-color: #000; } }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px; } }
+select{
+	width: 125px;
+}
+
+div.actions {
+    margin-bottom: 10px;
+}
+
+div.field{
+	float: left;
+	width: 150px;
+	text-align: left;
+}
 
 #notice {
   color: green; }
@@ -96,11 +107,18 @@ div {
 	margin: 0;
 	left: 10px;
 	top: 10px;
-	font-size: 0.6em;
-	font-weight: bold;
-	font-family: Courier, Arial, Sans-Serif;
 	width: 150px;
 	height: 150px;
+	display: block;
+	position: fixed;
+}
+
+div.stats{
+	left:10px;
+	top:160px;
+	font-size: 0.8em;
+	font-weight: bold;
+	font-family: Courier, Arial, Sans-Serif;
 	display: block;
 	position: fixed;
 }
