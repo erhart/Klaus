@@ -1,4 +1,4 @@
-<h1>Listing documents</h1>
+<h3>Listing documents</h3>
 
 <table>
   <tr>
@@ -14,17 +14,17 @@
   </tr>
 
 <% @documents.each do |document| %>
-  <tr>
-    <td><%= document.id %></td>
-    <td><%= document.name %></td>
-    <td><%= document.lesson.name %></td>
-    <td><%= document.semester.name %></td>
-    <td><%= document.prof.name %></td>
-    <td><%= document.doc_type.name %></td>
-    <td><%= link_to 'Show', document %></td>
-    <td><%= link_to 'Edit', edit_document_path(document) %></td>
-    <td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+	  <tr class="<%= cycle("even", "odd") %>">
+		<td><%= document.id %></td>
+		<td><%= document.name %></td>
+		<td><%= document.lesson.name %></td>
+		<td><%= document.semester.name %></td>
+		<td><%= document.prof.name %></td>
+		<td><%= document.doc_type.name %></td>
+		<td><%= link_to 'Show', document %></td>
+		<td><%= link_to 'Edit', edit_document_path(document) %></td>
+		<td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
 <% end %>
 </table>
 

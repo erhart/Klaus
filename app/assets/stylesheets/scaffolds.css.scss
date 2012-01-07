@@ -1,9 +1,46 @@
 body {
-  background-color: #fff;
+  background-color: white;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+  width: 900px;
+  margin: 10px auto;
+  padding: 5px;
+  border: 1px solid lightgrey;  
+}
+
+header{
+	height: 100px;
+	border-bottom: 1px solid grey;
+}
+
+nav{
+	height: 25px;
+	border-bottom: 1px solid grey;
+}
+
+footer{
+	margin-top: 15px;
+	height: 25px;
+	border-top: 1px solid grey;
+}
+
+h1{
+	font-size: 5em;
+	font-weight: bold;
+	text-align: center;
+}
+
+h2{
+	font-size: 2em;
+	text-align: center;
+}
+
+h3{
+	font-size: 1.5em;
+	text-align: left;
+}
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -54,3 +91,16 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+
+.logo{
+	margin: 0;
+	left: 10px;
+	top: 10px;
+	font-size: 0.6em;
+	font-weight: bold;
+	font-family: Courier, Arial, Sans-Serif;
+	width: 150px;
+	height: 150px;
+	display: block;
+	position: fixed;
+}

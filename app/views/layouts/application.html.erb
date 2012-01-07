@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Klausur</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Klausurverwaltung FSMNI</title>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 
-</body>
+		<header>
+			<h1>Fachschaft MNI</h1>
+			<h2>Dokumentenverwaltung</h2>
+		</header>
+		
+		<nav>
+			<% unless user_signed_in? %>
+				<%= link_to "Login", new_user_session_path %>
+			<% else %> 
+				<%= link_to 'New document', new_document_path %> |
+				<%= link_to 'New lesson', new_lesson_path %> |
+				<%= link_to 'New professor', new_prof_path %> |
+				<%= link_to 'New semester', new_semester_path %> |
+				<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+			<% end %>
+		</nav>
+		
+		<%= yield %>
+
+		<footer>
+			
+		</footer>
+			<img class="logo" src="../assets/QR-FS-Logo_-_fsmni.thm.de.png" alt="FSMNI Logo" />
+	</body>
 </html>
