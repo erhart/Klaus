@@ -44,6 +44,12 @@ before_filter :authenticate_user!, :only => [ :destroy ]
   def create
     @document = Document.new(params[:document])
 
+    #lessons semester prof doc_type
+    i = Document.where("lesson_id = ? AND semester_id = ? AND prof_id = ? AND doc_type_id = ?", @document.lesson.id, @document.semester.id, @document.prof.id, @document.doc_type.id).size
+    
+    #name = docType_prof_fach_sem_zahl
+	  @document.name = @document.doc_type.name+'_'+@document.prof.name+'_'+@document.lesson.name+'_'+@document.semester.name+'_'+i.to_s
+ 
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
