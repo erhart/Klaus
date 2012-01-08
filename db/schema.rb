@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107114005) do
+ActiveRecord::Schema.define(:version => 20120107173705) do
 
   create_table "doc_types", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120107114005) do
     t.integer  "doc_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file"
   end
 
   add_index "documents", ["doc_type_id"], :name => "index_documents_on_doc_type_id"
