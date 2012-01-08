@@ -19,7 +19,7 @@ class FileUploader < CarrierWave::Uploader::Base
   def store_dir
     #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     #"uploads/#{model.class.to_s.underscore}/"
-    "klausuren/"
+    "dokumente/"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
