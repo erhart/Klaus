@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <%= debugger %>
   <div class="field">
     <%= f.label :lesson %><br />
 	<%= f.select :lesson_id, Lesson.all.collect { |p| [ p.name, p.id ] } %>
