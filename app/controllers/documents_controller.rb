@@ -16,7 +16,7 @@ before_filter :authenticate_user!, :only => [ :destroy ]
   # GET /documents/1.json
   def show
     @document = Document.find(params[:id])
-
+	
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @document }
@@ -48,8 +48,9 @@ before_filter :authenticate_user!, :only => [ :destroy ]
     i = Document.where("lesson_id = ? AND semester_id = ? AND prof_id = ? AND doc_type_id = ?", @document.lesson.id, @document.semester.id, @document.prof.id, @document.doc_type.id).size
     
     #name = docType_prof_fach_sem_zahl
-	  @document.name = @document.doc_type.name+'_'+@document.prof.name+'_'+@document.lesson.name+'_'+@document.semester.name+'_'+i.to_s
- 
+	@document.name = @document.doc_type.name+'_'+@document.prof.name+'_'+@document.lesson.name+'_'+@document.semester.name+'_'+i.to_s
+	$upName = @document.name
+	
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }
