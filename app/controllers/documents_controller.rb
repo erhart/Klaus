@@ -48,7 +48,7 @@ before_filter :authenticate_user!, :only => [ :destroy ]
     i = Document.where("lesson_id = ? AND semester_id = ? AND prof_id = ? AND doc_type_id = ?", @document.lesson.id, @document.semester.id, @document.prof.id, @document.doc_type.id).size
     
     #name = docType_prof_fach_sem_zahl
-	@document.name = @document.doc_type.name+'_'+@document.prof.name+'_'+@document.lesson.name+'_'+@document.semester.name+'_'+i.to_s
+	@document.name = (@document.doc_type.name+'_'+@document.prof.name+'_'+@document.lesson.name+'_'+@document.semester.name+'_'+i.to_s).parameterize
 	$upName = @document.name
 	
     respond_to do |format|
@@ -68,17 +68,20 @@ before_filter :authenticate_user!, :only => [ :destroy ]
     @document = Document.find(params[:id])
 	
 	@tmp = Document.new(params[:document])
+	
 	tmp2 = @document.name
+	tempPath = "public/dokumente/"
+	extName = File.extname(@document.file_url)
+	
 	i = Document.where("lesson_id = ? AND semester_id = ? AND prof_id = ? AND doc_type_id = ?", @tmp.lesson.id, @tmp.semester.id, @tmp.prof.id, @tmp.doc_type.id).size
     
     #name = docType_prof_fach_sem_zahl
-	@document.name = @tmp.doc_type.name+'_'+@tmp.prof.name+'_'+@tmp.lesson.name+'_'+@tmp.semester.name+'_'+i.to_s
+	@document.name = (@tmp.doc_type.name+'_'+@tmp.prof.name+'_'+@tmp.lesson.name+'_'+@tmp.semester.name+'_'+i.to_s).parameterize
 	
-	extName = File.extname(@document.file_url)
-	tempPath = "public/dokumente/"
+	$newPath = tempPath
+	$newFile = @document.name+extName
+	
 	File.rename(tempPath+tmp2+extName, tempPath+@document.name+extName)
-
-	#@document.file.file_url = "public/dokumente/"+@document.name + extName
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
