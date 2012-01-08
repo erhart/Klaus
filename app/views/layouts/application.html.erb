@@ -5,6 +5,7 @@
 		<%= stylesheet_link_tag    "application" %>
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
+		<meta charset="UTF-8" />
 	</head>
 	<body>
 
@@ -34,9 +35,9 @@
 		<%= yield %>
 
 		<footer>
-			CC by NCSA - Fachschaft MNI - Technische Hochschule Mittelhessen
+			CC BY-NC-SA - Fachschaft MNI - Technische Hochschule Mittelhessen
 		</footer>
-			<img class="logo" src="../assets/QR-FS-Logo_-_fsmni.thm.de.png" alt="FSMNI Logo" />
+			<img class="logo" src="../../assets/QR-FS-Logo_-_fsmni.thm.de.png" alt="FSMNI Logo" />
 			<div class="stats">Documents: <%= Document.where('id').size.to_s %></div>
 	</body>
 </html>

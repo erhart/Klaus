@@ -66,6 +66,19 @@ before_filter :authenticate_user!, :only => [ :destroy ]
   # PUT /documents/1.json
   def update
     @document = Document.find(params[:id])
+	
+	@tmp = Document.new(params[:document])
+	tmp2 = @document.name
+	i = Document.where("lesson_id = ? AND semester_id = ? AND prof_id = ? AND doc_type_id = ?", @tmp.lesson.id, @tmp.semester.id, @tmp.prof.id, @tmp.doc_type.id).size
+    
+    #name = docType_prof_fach_sem_zahl
+	@document.name = @tmp.doc_type.name+'_'+@tmp.prof.name+'_'+@tmp.lesson.name+'_'+@tmp.semester.name+'_'+i.to_s
+	
+	extName = File.extname(@document.file_url)
+	tempPath = "public/dokumente/"
+	File.rename(tempPath+tmp2+extName, tempPath+@document.name+extName)
+
+	#@document.file.file_url = "public/dokumente/"+@document.name + extName
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
@@ -76,6 +89,7 @@ before_filter :authenticate_user!, :only => [ :destroy ]
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
     end
+    @tmp.destroy
   end
 
   # DELETE /documents/1
