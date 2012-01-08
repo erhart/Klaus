@@ -5,7 +5,7 @@ before_filter :authenticate_user!, :only => [ :destroy ]
   # GET /documents.json
   def index
     @documents = Document.all
-
+	
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }

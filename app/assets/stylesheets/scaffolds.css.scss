@@ -67,14 +67,9 @@ select{
 	width: 125px;
 }
 
-div.actions {
+div.actions div.field {
     margin-bottom: 10px;
-}
-
-div.field{
-	float: left;
-	width: 150px;
-	text-align: left;
+    float: right;
 }
 
 #notice {
