@@ -12,6 +12,18 @@ class Document < ActiveRecord::Base
 	def before_update      
 		self.file_url = Path.combine($newPath, $newFile)
 	end
+
+    def self.filter(params)
+
+        condition ={}
+        condition[:prof_id] = params[:prof_id] if params[:prof_id]
+        condition[:lesson_id] = params[:lesson_id] if params[:lesson_id]
+        condition[:doc_type_id] = params[:doc_type_id] if params[:doc_type_id]
+        condition[:semester_id] = params[:semester_id] if params[:semester_id]
+        condition.each_pair { |key,value| condition.delete key if value == "" }
+
+        documents = where condition
+
+        documents
+    end
 end
-
-

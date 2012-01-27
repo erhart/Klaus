@@ -1,5 +1,21 @@
 <h3>Listing documents</h3>
 
+<div id="filter">
+    <%= form_tag documents_path, :method => 'get' do %>
+        <%= label_tag :prof %>
+        <%= collection_select(nil, :prof_id, Prof.all.sort_by {|prof| prof.name}, :id, :name, { :include_blank => true,:selected => params[:prof_id] })  %>
+        <%= label_tag :lesson %>
+        <%= collection_select(nil, :lesson_id, Lesson.all.sort_by {|lesson| lesson.name}, :id, :name, { :include_blank => true,:selected => params[:lesson_id] })  %>        
+        <%= label_tag :semester %>
+        <%= collection_select(nil, :semester_id, Semester.all.sort_by {|semester| semester.name}, :id, :name, { :include_blank => true,:selected => params[:semester_id] })  %>
+        <%= label_tag :doc_type %>
+        <%= collection_select(nil, :doc_type_id, DocType.all.sort_by {|doc_type| doc_type.name}, :id, :name, { :include_blank => true,:selected => params[:doc_type_id] })  %>        
+        <%= submit_tag "Filter", :name => nil %>
+    <% end %>
+</div>
+
+
+
 <table width="100%">
   <tr>
     <!--<th>Id</th>
