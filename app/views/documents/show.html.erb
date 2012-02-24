@@ -30,5 +30,8 @@
   <%= @document.doc_type.name %>
 </p>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_document_path(@document) %> |
+<% end %>
+
 <%= link_to 'Back', documents_path %>
