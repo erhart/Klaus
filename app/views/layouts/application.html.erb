@@ -9,9 +9,6 @@
 	</head>
 	<body>
 
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
 		<header>
 			<h1>Fachschaft MNI</h1>
 			<h2>Dokumentenverwaltung</h2>
@@ -47,6 +44,10 @@
 
 		</footer>
 			<img class="logo" src="../../assets/QR-FS-Logo_-_fsmni.thm.de.png" alt="FSMNI Logo" />
-			<div class="stats">Documents: <%= Document.where('id').size.to_s %></div>
+			<div class="stats">
+				Documents: <%= Document.where('id').size.to_s %><br/>
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+			</div>
 	</body>
 </html>

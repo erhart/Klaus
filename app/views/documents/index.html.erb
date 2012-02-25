@@ -20,7 +20,7 @@
   <tr>
     <!--<th>Id</th>
     <th>Name</th>-->
-    <th>Prof</th>
+    <th>Professor</th>
     <th>Lesson</th>
     <th>Semester</th>
     <th>Doc type</th>
@@ -37,11 +37,11 @@
 		<td><%= document.lesson.name %></td>
 		<td><%= document.semester.name %></td>
 		<td><%= document.doc_type.name %></td>
-		<td><%= link_to "Download " + document.name, "dokumente/" + document.name + File.extname(document.file_url) %></td>
-		<td><%= link_to 'Show', document %></td>
+		<td><%= link_to "download " + document.name, "dokumente/" + document.name + File.extname(document.file_url) %></td>
+		<td><%= link_to 'show', document %></td>
 		<% if user_signed_in? %>
-		<td><%= link_to 'Edit', edit_document_path(document) %></td>
-		<td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
+		<td><%= link_to 'edit', edit_document_path(document) %></td>
+		<td><%= link_to 'destroy', document, confirm: 'Are you sure?', method: :delete %></td>
 		<% end %>
   </tr>
 <% end %>

@@ -26,12 +26,12 @@
 </p>
 
 <p>
-  <b>Doc type:</b>
+  <b>Doctype:</b>
   <%= @document.doc_type.name %>
 </p>
 
 <% if user_signed_in? %>
-	<%= link_to 'Edit', edit_document_path(@document) %> |
+	<%= link_to 'edit', edit_document_path(@document) %> |
 <% end %>
 
-<%= link_to 'Back', documents_path %>
+<%= link_to 'back', documents_path %>
