@@ -1,5 +1,5 @@
 class DocumentsController < ApplicationController
-before_filter :authenticate_user!, :only => [:edit, :destroy ]
+before_filter :authenticate_user!, :only => [:destroy, :edit ]
 
   # GET /documents
   # GET /documents.json

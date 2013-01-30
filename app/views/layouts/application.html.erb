@@ -16,15 +16,15 @@
 		
 		<nav>
 			<%= link_to 'Documents', documents_path %> ||
+            <%= link_to 'New document', new_document_path %> |
+            <%= link_to 'New professor', new_prof_path %> |
+            <%= link_to 'New lesson', new_lesson_path %> |
+            <%= link_to 'New semester', new_semester_path %> |
+            <%= link_to 'New doctype', new_doc_type_path %> ||
 			
 			<% unless user_signed_in? %>
 				<%= link_to "Login", new_user_session_path %>
-			<% else %> 
-				<%= link_to 'New document', new_document_path %> |
-				<%= link_to 'New professor', new_prof_path %> |
-				<%= link_to 'New lesson', new_lesson_path %> |
-				<%= link_to 'New semester', new_semester_path %> |
-				<%= link_to 'New doctype', new_doc_type_path %> ||
+			<% else %>
 				<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 			<% end %>
 		</nav>
@@ -33,12 +33,10 @@
 
 		<footer>
 			<p>
-			<% if user_signed_in? %>
-				<%= link_to 'Professors', profs_path %> |
-				<%= link_to 'Lessons', lessons_path %> |
-				<%= link_to 'Semesters', semesters_path %> |
-				<%= link_to 'Doctypes', doc_types_path %><br/>
-			<% end %>
+			<%= link_to 'Professors', profs_path %> |
+			<%= link_to 'Lessons', lessons_path %> |
+			<%= link_to 'Semesters', semesters_path %> |
+			<%= link_to 'Doctypes', doc_types_path %><br/>
 			CC BY-NC-SA - Fachschaft MNI - Technische Hochschule Mittelhessen
 			</p>
 

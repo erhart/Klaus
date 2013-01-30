@@ -1,6 +1,5 @@
 class DocTypesController < ApplicationController
-before_filter :authenticate_user!
-
+  before_filter :authenticate_user!, :only => [:destroy, :edit ]
   # GET /doc_types
   # GET /doc_types.json
   def index

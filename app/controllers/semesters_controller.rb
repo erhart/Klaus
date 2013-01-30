@@ -1,6 +1,5 @@
 class SemestersController < ApplicationController
-before_filter :authenticate_user!
-
+  before_filter :authenticate_user!, :only => [:destroy, :edit ]
   # GET /semesters
   # GET /semesters.json
   def index
