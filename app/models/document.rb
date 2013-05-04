@@ -9,6 +9,7 @@ class Document < ActiveRecord::Base
 	validates :semester, :presence => true
 	validates :prof, :presence => true
 	validates :doc_type, :presence => true
+  validates :file, :presence => true
 	def before_update      
 		self.file_url = Path.combine($newPath, $newFile)
 	end
